@@ -134,17 +134,12 @@ mind.predict([[2.2]])
 # In[21]:
 
 
-from sklearn.externals import joblib
+from sklearn.metrics import r2_score
+score = r2_score(y_test, y_pred)
 
-
-# In[22]:
-
-
-joblib.dump(mind,'salaryPredicter.pk1')
-
-
-# In[ ]:
-
+file1 = open("accuracy.txt", "w")
+file1.write("{0}".format(score))
+file1.close()
 
 
 
